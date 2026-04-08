@@ -7,6 +7,6 @@ export async function GET(
     { params }: { params: Promise<{ id: number }> }
 ) {
     const {id}= await params;
-    const projet=dataProjets.filter(p=>p.id == id);
+    const projet=dataProjets.find(p=>p.id == id);
     return Response.json(projet);
 }

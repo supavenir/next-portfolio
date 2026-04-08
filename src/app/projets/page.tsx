@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Projet from "@/models/Projet";
+import {request} from "@/services/HttpService";
+import {API_URLS} from "@/constants/API_URLS";
 
 
 export default async function ProjetsPage() {
-    const response=await fetch("http://localhost:3000/api/projets");
-    const projets: Projet[]=await response.json();
+    const projets=await request<Projet[]>(API_URLS.projets.all,"GET")
     return (
         <>
             <h1>Projets ({projets.length})</h1>
