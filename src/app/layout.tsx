@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, DM_Sans } from "next/font/google";
+import type {Metadata} from "next";
+import {DM_Sans, Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
+import {cn} from "@/lib/utils";
+import {Toaster} from "@/components/ui/sonner";
 
 const dmSans = DM_Sans({subsets:['latin'],variable:'--font-sans'});
 
@@ -30,11 +31,12 @@ export default function RootLayout({
       lang="fr"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", dmSans.variable)}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full p-10">
       <header>
         <h1>Header</h1>
       </header>
       {children}
+      <Toaster />
       </body>
     </html>
   );
