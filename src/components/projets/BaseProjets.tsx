@@ -59,7 +59,7 @@ export default function BaseProjets() {
                 }
             </div>
             }
-            <Dialog open={openUpdateDialog} onOpenChange={setOpenUpdateDialog}>
+            <Dialog open={openUpdateDialog} onOpenChange={setOpenUpdateDialog} modal={false}>
                 <DialogContent>
                     <DialogTitle>Modification de projet</DialogTitle>
                     <ProjetForm projet={activeProjet!}/>
